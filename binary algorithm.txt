@@ -1,0 +1,28 @@
+1. start
+2. input array, item
+2. sort the given Array
+3. low = array[0]
+4. high = array[array.length-1]
+5. while (low =< high)
+    6. mid = (low +high)/2
+    7. if (array[mid] == item)
+        8. print item found
+    9. if (array[mid] > item)
+        10. high = mid -1 
+    9. if (array[mid] < item)
+        10. low = mid + 1 
+        goto step 5
+
+
+start
+sort the given array
+find mid   mid=(low+up)/2
+compare mid value with search value 
+    a) mid value == search value
+            print present
+    b) mid value > search value
+            up = mid -1
+    c) mid value < search value
+            low = mid + 1
+repeat the above step untill low and up concides
+end
