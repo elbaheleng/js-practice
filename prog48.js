@@ -25,6 +25,7 @@ console.log(employee.length);
 
 
 //print developer employee details
+console.log(`developer employee details`);
 for ( emp of employee){
     if (emp[2] == 'developer')
         console.log(emp);
@@ -32,6 +33,7 @@ for ( emp of employee){
 }
     
 //print employee whose salary > 30000
+console.log(`employee whose salary > 30000`);
 for ( emp of employee){
     if (emp[4] > 30000)
         console.log(emp[1]);
@@ -39,8 +41,8 @@ for ( emp of employee){
 }
 
 // print details of employee Laisha
+console.log(`details of employee Laisha`);
 for ( emp of employee){
     if (emp[1] == 'Laisha')
         console.log(emp);
-        
 }
