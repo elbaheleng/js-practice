@@ -59,10 +59,15 @@ console.log(asceexp);
 //find the total expense of the company
 console.log(`total expense of the company`);
 console.log(employee.map((emp) => emp[4]).reduce((sum, x) => (sum + x)));
+console.log(employee.reduce((sum, x) => (sum + x[4]),0));
 
 // find the highest salary
 console.log(`highest salary`);
-console.log(employee.map((emp) => emp[4]).reduce((highest, x) => highest > x ? highest : x));
+console.log(employee.reduce((high, x) => high > x[4] ? high : x[4], 0 ));
+
 // find the lowest salary
 console.log(`lowest salary`);
+console.log(employee.reduce((low, x) => low < x[4] ? low : x[4])); // check
 console.log(employee.map((emp) => emp[4]).reduce((lowest, x) => lowest < x ? lowest : x));
+lowsal = employee.reduce((emp1, emp2) => emp1[4] < emp2[4] ? emp1 : emp2)
+console.log(lowsal[4]);
