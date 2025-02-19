@@ -14,4 +14,13 @@ colours.splice(-2,1) // remove orange
 console.log(colours);
 colours.splice(1,1, 'purple')
 console.log(colours); // delete green and add purple
+colours.splice(1,0, 'yellow')
+console.log(colours); // delete green and add purple
+
+console.log(colours.includes('red')); // red is there in array, so returns true
+
+console.log(colours.indexOf('red')); // gives index of first occurance of red
+
+x = colours.slice(0,2)
+console.log(x);
 
