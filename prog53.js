@@ -23,4 +23,6 @@ console.log(colours.indexOf('red')); // gives index of first occurance of red
 
 x = colours.slice(0,2)
 console.log(x);
+console.log(colours.slice(-2));
+
 
