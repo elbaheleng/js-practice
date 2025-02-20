@@ -36,16 +36,12 @@ console.log(p[1]);
 
 //5. display out of stock product
 console.log(`out of stock product-----`);
-p = products.filter((prod) => prod[3] == 0)
-p.forEach(pro => {
-    console.log(pro[1]); 
-})
+products.filter((prod) => prod[3] == 0).forEach(nam => console.log(nam[1]))
 
 
 //6. sort products based on stock in decsending order
 console.log(`sort products based on stock in decsending order-----`);
-products.sort((n1,n2) => n2[3] - n1[3])
-console.log(products);
+products.sort((n1,n2) => n2[3] - n1[3]).forEach(nam => console.log(nam[1]))
 
 
 //7. print product having maximum available stock
@@ -56,16 +52,17 @@ console.log(p[1]);
 
 //8. is there any product that can be purchased by Rs. 10
 console.log(`is there any product that can be purchased by Rs. 10-----`);
-console.log(products.some((prod) => prod[2] < 10));
+p = products.some((prod) => prod[2] <= 10)
+console.log(p ? 'Yes' : 'No');
+
 
 
 //9. Is there any product in the range of Rs.10 to Rs.30
 console.log(`Is there any product in the range of Rs.10 to Rs.30-----`);
-console.log(products.some((prod) => prod[2] >= 10 && prod[2] <= 30 ));
+p = products.some((prod) => prod[2] >= 10 && prod[2] <= 30 )
+console.log(p ? 'Yes' : 'No');
 
 //10. print all products in the range of Rs.10 to Rs.30
 console.log(`products in the range of Rs.10 to Rs.30-----`);
-p = products.filter((prod) => prod[2] >= 10 && prod[2] <= 30)
-p.forEach(pro => {
-    console.log(pro[1]); 
-})
+products.filter((prod) => prod[2] >= 10 && prod[2] <= 30).forEach(nam => console.log(nam[1]))
+
