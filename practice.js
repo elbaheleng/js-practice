@@ -82,7 +82,7 @@
 //         k = 0
 //     }
 //     for ( j = 1; j <= i; j++){
-        
+
 //         if ( k == 0){
 //             str = str + "1 "
 //             k = 1
@@ -115,7 +115,7 @@
 //         str = str + l + " "
 //     }
 //     console.log(str);
-    
+
 // }
 
 // * * * * 
@@ -152,7 +152,7 @@
 //         str = str + " *  "
 //     }
 //    console.log(str);
-   
+
 // }
 
 // for ( i = 1; i <= 7; i++){
@@ -165,7 +165,7 @@
 //             str = str + "  "
 //     }
 //     console.log(str);
-    
+
 // }
 
 // * * * * * * 
@@ -303,7 +303,7 @@
 //         str = str + j + " "
 //     }
 //     console.log(str);
-    
+
 // }
 
 // 1 2 3 4 
@@ -323,7 +323,7 @@
 //         str = str + k + " "
 //     }
 //     console.log(str);
-    
+
 // }
 
 //         *
@@ -341,7 +341,75 @@
 //             str = str + "  "
 //     }
 //     console.log(str);
-    
+
 // }
+
+//roman to integer
+// s = 'D'
+// arr = s.split('')
+// console.log(arr);
+
+// arr2 = []
+// for( i = 0; i < arr.length; i++){
+//     if (arr[i] == 'M')
+//         arr2[i] = 1000
+//     if (arr[i] == 'D')
+//         arr2[i] = 500
+//     if (arr[i] == 'C')
+//         arr2[i] = 100
+//     if (arr[i] == 'L')
+//         arr2[i] = 50
+//     if (arr[i] == 'X')
+//         arr2[i] = 10
+//     if (arr[i] == 'V')
+//         arr2[i] = 5
+//     if (arr[i] == 'I')
+//         arr2[i] = 1
+
+// }
+// console.log(arr2);
+
+// arr3 = []
+// k = 0
+// if (arr2.length == 1){
+//     arr3 = arr2
+// }
+// else{
+// for( i = 0; i < arr2.length - 1; i++){
+//     if (arr2[i] < arr2[i + 1]){
+//         arr3[k] = arr2[i + 1] - arr2[i]
+//         k++
+//         i++
+//     }
+//     else if (arr2[i] >= arr2[i + 1]){
+//         arr3[k] = arr2[i]
+//         k++
+//     }   
+// }
+
+// if (arr2[arr.length-2] >= arr2[arr.length-1]){
+//     arr3[k] = arr2[arr.length-1]
+// }
+// }
+// console.log(arr3);
+
+// console.log(arr3.reduce((sum,x) => sum + x , 0));
+
+//Input: strs = ["flower","flow","flight"]
+//Output: "fl"
+strs = ["faower", "flow", "flight", "floi"]
+common = ''
+for( let i = 0; i < strs.length; i++){
+    common = strs[0].substring(0, i+1)
+    for( j = 1; j < strs.length; j++ ){
+        if ( common != strs[j].substring(0, i+1) ){
+            common = common.slice(0,i-1)
+            break
+        }
+    }
+}
+console.log(common);
+
+
 
 
