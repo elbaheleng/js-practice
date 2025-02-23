@@ -395,21 +395,19 @@
 
 // console.log(arr3.reduce((sum,x) => sum + x , 0));
 
-//Input: strs = ["flower","flow","flight"]
-//Output: "fl"
-strs = ["faower", "flow", "flight", "floi"]
-common = ''
-for( let i = 0; i < strs.length; i++){
-    common = strs[0].substring(0, i+1)
-    for( j = 1; j < strs.length; j++ ){
-        if ( common != strs[j].substring(0, i+1) ){
-            common = common.slice(0,i-1)
-            break
-        }
+strs = ["flower","flow","flight"]
+common = true
+commonstr = ''
+shortest = strs.reduce((short, x) => short.length < x.length ? short : x)
+len = shortest.length
+for (j = 0; j < len; j++) {
+    c = strs[0][j]
+    for (i = 1; i < strs.length; i++) {
+        if (c != strs[i][j])
+            common = false
     }
+    if (common)
+        commonstr = commonstr + c
 }
-console.log(common);
-
-
-
-
+console.log(commonstr);
+ 
