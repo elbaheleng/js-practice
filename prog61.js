@@ -32,7 +32,8 @@ console.log(employee);
 Object.assign(employee,{'status' : true })
 console.log(employee);
 
-    
+employee['empExp'] += 3
+console.log(employee);
 
-
-
+delete employee.status
+console.log(employee);
