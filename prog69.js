@@ -12,63 +12,71 @@ class Bank {
     }
 
     //wap to authenticate a given account
-    authenticate(accNo, upassword){
-        if(this.validate(accNo)){
-            if (this.accountDetails[accNo].password == upassword){
+    authenticate(accNo, upassword) {
+        if (this.validate(accNo)) {
+            if (this.accountDetails[accNo].password == upassword) {
                 console.log(`Valid Account details`);
             }
             else
-            console.log(`Invalid account or password`);
-            
+                console.log(`Invalid account or password`);
+
         }
         else
-        console.log(`Invalid account or password`);
+            console.log(`Invalid account or password`);
 
     }
     //wap to check the balance of a given acc number
 
-checkBalance(accNo,upassword){
-    if(this.validate(accNo)){
-        if (this.accountDetails[accNo].password == upassword){
-            console.log(`Balance of account no.${accNo} is ${this.accountDetails[accNo].balance}`);
+    checkBalance(accNo, upassword) {
+        if (this.validate(accNo)) {
+            if (this.accountDetails[accNo].password == upassword) {
+                console.log(`Balance of account no.${accNo} is ${this.accountDetails[accNo].balance}`);
+            }
+            else
+                console.log(`Invalid account or password`);
+
         }
         else
-        console.log(`Invalid account or password`);
-        
-    }
-    else
-    console.log(`Invalid account or password`);
+            console.log(`Invalid account or password`);
 
-}
+    }
     //wap to transfer money between 2 accounts
-transfer(fromAcc, frompassword, toAcc, amount){
-        
-        if(this.validate(fromAcc)){
-            if (this.accountDetails[fromAcc].password == frompassword){
-                this.accountDetails[toAcc].balance += amount
-        this.accountDetails[fromAcc].balance -= amount
-        console.log(`Amount Rs.${amount} transferred from account no.${fromAcc} to account no.${toAcc}`);
-        
-        console.log(`Balance of account no.${toAcc} is ${this.accountDetails[toAcc].balance}`);
-        console.log(`Balance of account no.${fromAcc} is ${this.accountDetails[fromAcc].balance}`);
+    transfer(fromAcc, frompassword, toAcc, amount) {
+
+        if (this.validate(fromAcc) && this.validate(toAcc)) {
+            if (this.accountDetails[fromAcc].password == frompassword) {
+
+                if (this.accountDetails[fromAcc].balance >= amount) {
+                    console.log(` Balance of account no.${fromAcc} is ${this.accountDetails[fromAcc].balance}`);
+                    this.accountDetails[toAcc].balance += amount
+                    this.accountDetails[fromAcc].balance -= amount
+
+                    console.log(`Amount Rs.${amount} transferred from account no.${fromAcc} to account no.${toAcc}`);
+
+                    console.log(`Current Balance of account no.${toAcc} is ${this.accountDetails[toAcc].balance}`);
+                    console.log(`Current Balance of account no.${fromAcc} is ${this.accountDetails[fromAcc].balance}`);
+                }
+                else
+                    console.log(`Insufficient balance`);
+
 
 
             }
             else
-            console.log(`Invalid account or password`);
-            
+                console.log(`Invalid account or password`);
+
         }
         else
-        console.log(`Invalid account or password`);
+            console.log(`Invalid account numbers`);
     }
 }
 
 const b = new Bank()
-console.log(b.validate(1004) ? `Account exists`: `Account doesnt exist`);
+console.log(b.validate(1004) ? `Account exists` : `Account doesnt exist`);
 
 console.log(`---------------`);
-b.authenticate(1000,'userone','usertwo')
+b.authenticate(1000, 'userone', 'usertwo')
 console.log(`---------------`);
 b.checkBalance(1000, 'userone')
 console.log(`---------------`);
-b.transfer(1001,'usertwo',1000,5000)
+b.transfer(1001, 'usertwo', 1000, 5000)
