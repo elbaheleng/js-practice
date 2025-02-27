@@ -416,6 +416,9 @@ str = []
 for (i = 0; i < s.length; i++) {
     if (s[0] == '(' || s[0] == '{' || s[0] == '[')
         str.push(s[i])
+    else{
+        
+    }
 
 }
 
