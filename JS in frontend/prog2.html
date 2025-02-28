@@ -16,14 +16,44 @@
 </head>
 <body>
     <h1>DOM</h1>
-    <h1>Sample</h1>
+    <h1 class = "style1">Sample</h1>
+    <p class = "style1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero mollitia sint ea soluta ipsa incidunt maiores placeat officia at deleniti. Totam delectus nihil in repellendus! Alias id quasi esse vel!</p>
+    <p id = "id1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae doloribus voluptatem, aliquid, dolor qui distinctio voluptatibus voluptas soluta rerum rem eaque aspernatur delectus at inventore quibusdam a, maxime similique voluptatum!</p>
     <button onclick="change()">Click</button>
 </body>
 <script>
     function change(){
-        const content = document.getElementsByTagName('h1')
-        console.log(content[0]);
-        content[0].innerHTML = "Document Object Model"
+        const content1 = document.getElementsByTagName('h1')
+        console.log(content1[0]);
+        content1[0].innerHTML = "Document Object Model"
+        content1[0].style.fontSize = '50px'
+
+        // const content2 = document.getElementsByClassName("style1")
+        // console.log(content2);
+        // content2[1].style.backgroundColor = "yellow"
+        // content2[1].style.fontSize = '30px'
+
+        // const content3 = document.getElementById("id1")
+        // console.log(content3);
+        // content3.style.backgroundColor = "cyan"
+        // content3.style.fontSize = '20px'
+
+        const content4 = document.querySelector("#id1")
+        console.log(content4);
+        content4.style.backgroundColor = "cyan"
+        content4.style.fontSize = '20px'
+
+        const content5 = document.querySelector(".style1")
+        console.log(content5);
+        content5.style.backgroundColor = "cyan"
+        content5.style.fontSize = '20px'
+
+        const content6 = document.querySelectorAll("h1")
+        console.log(content6);
+        content6[0].innerHTML = "Document Object Model"
+        content6[0].style.backgroundColor = "cyan"
+        content6[0].style.fontSize = '20px'
+        
         
     }
 </script>

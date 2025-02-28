@@ -344,7 +344,7 @@
 
 // }
 
-//roman to integer
+////////////////////////////////////////////roman to integer
 // s = 'D'
 // arr = s.split('')
 // console.log(arr);
@@ -394,7 +394,7 @@
 // console.log(arr3);
 
 // console.log(arr3.reduce((sum,x) => sum + x , 0));
-
+//////////////////////////////////////////////////////////////////////////
 // strs = ["flower","flow","flight"]
 // common = true
 // commonstr = ''
@@ -410,16 +410,106 @@
 //         commonstr = commonstr + c
 // }
 // console.log(commonstr);
+//////////////////////////////////////////////////////////////////
+// s = '{()}{'
+// str = []
+// for (i = 0; i < s.length; i++) {
+//     if (s[i] == '(' || s[i] == '{' || s[i] == '[')
+//         str.push(s[i])
+//     else{
+//         if (s[i] == ')' || s[i] == '}' || s[i] == ']'){
+//             if (str.length == 0)
+//                 console.log(false);
+//             else{
+//                 if (s[i] == ')' && str[str.length - 1] == '('){
+//                     str.pop()
+//                     continue
+//                 }
+//                 else if (s[i] == '}' && str[str.length - 1] == '{'){
+//                     str.pop()
+//                     continue
+//                 }
+//                 else if (s[i] == ']' && str[str.length - 1] == '['){
+//                     str.pop()
+//                     continue
+//                 }
+//                 else
+//                 console.log(false);
 
-s = '{()}'
-str = []
-for (i = 0; i < s.length; i++) {
-    if (s[0] == '(' || s[0] == '{' || s[0] == '[')
-        str.push(s[i])
-    else{
-        
+
+//             }
+//         }
+//     }
+
+// }
+// if (str.length == 0)
+//     console.log(true);
+// else
+//      console.log(false);
+
+
+///////////////////////////////////////////////////////////
+
+
+
+// nums = [1,1,2]
+// for (let i = 0; i < nums.length; i++) {
+//     count = 0
+//     for (let j = i + 1; j < nums.length; j++) {
+//         if (nums[i] == nums[j]) {
+//             count++
+//         }
+//     }
+//     nums.splice(i + 1, count)
+// }
+// console.log(nums);
+
+//////////////////////////////////////////////////////////
+
+// nums = [0,1,2,2,3,0,4,2]
+// val = 2
+// count = 0
+//     for ( let i = 0; i < nums.length; i++){
+//         if (nums[i] == val){
+//             nums.splice(i,1)
+//             i--
+//         }
+//         else
+//             count++
+
+//     }
+// console.log(nums);
+// console.log(count);
+
+
+
+////////////////////////////////////////////
+haystack = "leetcode"
+ needle = "leeto"
+i = 0
+j = 0
+count = 0
+while (j < haystack.length){
+    if (needle[i] == haystack[j]){
+        i++
+        j++
+        count++
+        if (count == needle.length){
+            occurance = j - (count)
+            break
+        }
     }
-
+    else{
+        j = (j - count) + 1
+        i = 0
+        count = 0
+    }
 }
+if (count == needle.length){
+    console.log(occurance);  
+}
+else
+ console.log('-1');
+ 
 
 
