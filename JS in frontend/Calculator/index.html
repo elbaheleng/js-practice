@@ -9,21 +9,31 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <style>
             .but:hover{
-                opacity: 0.7
+                opacity: 0.9
+            }
+            .but{
+                
+  box-shadow: 2px 2px rgb(133, 171, 184);
+            }
+            #screen{
+                box-shadow: 1px 1px rgb(162, 168, 170);
+            }
+            .but:active{
+                translate: 1px 1px;
             }
         </style>
 </head>
 
 <body class="bg-info-subtle">
     <div class="container">
-        <div class="row  d-flex align-items-center justify-content-center"  style="height: 90vh;">
+        <div class="row  d-flex align-items-center justify-content-center"  style="height: 87vh;">
             <div class="col-lg-4 col-md-3"></div>
             <div class="col-lg-4 col-sm-12 col-md-6">
                 <h1 class="text-center fs-3">CALCULATOR</h1>
-                <div class="bg-dark bg-gradient rounded">
+                <div class="bg-black bg-gradient rounded">
                     <div class="row m-3 ">
-                        <div id = "input" class="bg-light bg-gradient mt-3 text-end pt-2 fs-4">
-                            <p class="font-monospace"></p>
+                        <div id="screen" class="bg-light bg-gradient mt-3 text-end pt-3 fs-4">
+                            <p  id = "input" >0</p>
                         </div>
                         <div class="fw-bold fs-5">
                             <div class="row d-flex justify-content-between gap-3 my-3">
@@ -104,7 +114,8 @@
             <div class="col-lg-4 col-md-3"></div>
         </div>
     </div>
-    <p class="text-center fst-italic">Designed and Developed by Elba Helen George</p>
+    <p class="text-center mb-0">Designed and Developed by</p>
+    <p class="text-center fst-italic">Elba Helen George</p>
 
 </body>
 <script src="./calc.js"></script>
