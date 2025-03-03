@@ -484,32 +484,73 @@
 
 
 ////////////////////////////////////////////
-haystack = "leetcode"
- needle = "leeto"
-i = 0
-j = 0
-count = 0
-while (j < haystack.length){
-    if (needle[i] == haystack[j]){
-        i++
-        j++
-        count++
-        if (count == needle.length){
-            occurance = j - (count)
-            break
-        }
+// haystack = "leetcode"
+//  needle = "leeto"
+// i = 0
+// j = 0
+// count = 0
+// while (j < haystack.length){
+//     if (needle[i] == haystack[j]){
+//         i++
+//         j++
+//         count++
+//         if (count == needle.length){
+//             occurance = j - (count)
+//             break
+//         }
+//     }
+//     else{
+//         j = (j - count) + 1
+//         i = 0
+//         count = 0
+//     }
+// }
+// if (count == needle.length){
+//     console.log(occurance);  
+// }
+// else
+//  console.log('-1');
+
+////////////////////////////////////////////
+nums = [1,3]
+target = 2
+if (target <= nums[0])
+    return 0
+if (target > nums[nums.length - 1])
+    console.log(nums.length);
+     nums.length
+low = 0
+found = false
+high = nums.length - 1
+while (low < high) {
+    mid = Math.floor((low + high) / 2)
+    if (nums[mid] > target) {
+        high = mid - 1
     }
+    else if (nums[mid] < target) {
+        low = mid + 1
+    }
+    else {
+        found = true
+        break
+    }
+}
+//console.log(nums [high], nums [low]);
+
+if (found)
+    console.log(mid);
+
+else{
+    if( nums[high] < nums[low])
+        console.log(high+1);
     else{
-        j = (j - count) + 1
-        i = 0
-        count = 0
-    }
-}
-if (count == needle.length){
-    console.log(occurance);  
-}
-else
- console.log('-1');
- 
+        if (target > nums[high])
+        console.log(high+1);
+    else if (target < nums[high])
+       console.log(low);
+       
+    } 
+} 
+
 
 
