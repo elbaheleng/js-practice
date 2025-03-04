@@ -50,15 +50,15 @@
                     <h1 class="mb-3 text-white text-center">Login</h1>
                     <form>
                         <div class="mb-3">
-                            <input type="email" placeholder="Username" class="form-control" id="exampleInputEmail1"
+                            <input id = "logUser" placeholder="Username" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <input type="password" placeholder="Password" class="form-control"
+                            <input id = "logPswd" placeholder="Password" class="form-control"
                                 id="exampleInputPassword1">
                         </div>
-                        <button type="submit" class="btn btn-primary form-control">Login</button>
-                        <p class="text-white">Are you a new User?<a href="./register.html" style="color: navy;">Register</a></p>
+                        <button type="button" onclick="obj.login()" class="btn btn-primary form-control">Login</button>
+                        <p class="text-white">Are you a new User? <a href="./register.html" style="color: navy;">Register</a></p>
                     </form>
                 </div>
             </div>

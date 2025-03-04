@@ -48,15 +48,15 @@
                   <h1 class="mb-3 text-white text-center">Register</h1>
                   <form>
                       <div class="mb-3">
-                          <input type="email" placeholder="Username" class="form-control" id="exampleInputEmail1"
+                          <input id = "user" placeholder="Username" class="form-control" id="exampleInputEmail1"
                               aria-describedby="emailHelp">
                       </div>
                       <div class="mb-3">
-                          <input type="password" placeholder="Password" class="form-control"
+                          <input id = "pswd"  placeholder="Password" class="form-control"
                               id="exampleInputPassword1">
                       </div>
-                      <button type="submit" class="btn btn-primary form-control">Register</button>
-                      <p class="text-white">Already a User?<a href="./login.html" style="color: navy;">Login</a></p>
+                      <button type="button" class="btn btn-primary form-control" onclick="obj.register()">Register</button>
+                      <p class="text-white">Already a User? <a href="./login.html" style="color: navy;">Login</a></p>
                   </form>
               </div>
           </div>
