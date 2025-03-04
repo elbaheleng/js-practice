@@ -61,16 +61,10 @@ class landing{
             }
         }  
     }
-    nameChange(){
-        userName.innerHTML = localStorage.getItem("user")
-    }
-    logout(){
-        localStorage.removeItem("user")
-        window.location = "login.html"
-    }
+
+    
 }
 
 const obj = new landing()
 obj.saveData()
 obj.getData()
-obj.nameChange()

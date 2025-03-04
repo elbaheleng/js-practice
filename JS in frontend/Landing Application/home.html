@@ -38,7 +38,7 @@
                 Dashboard
               </button>
               <div class="text-end">
-                <button type="button" class="btn text-white btn-bg-transparent border border-white"><i class="fa-solid fa-power-off me-2" onclick="obj.logout()"></i>Logout</button>
+                <button type="button"  onclick="logout()" class="btn text-white btn-bg-transparent border border-white"><i class="fa-solid fa-power-off me-2"></i>Logout</button>
               </div>
             </div>
           </nav>
@@ -54,5 +54,18 @@
 </div>
     </section>
 </body>
-<script src="./logic.js"></script>
+<script>
+  let user = localStorage.getItem("user")
+  if (!user){
+    alert('Please login')
+    window.location = "login.html"
+  }
+  else{
+    userName.innerHTML = localStorage.getItem("user")
+  }
+  function logout(){
+        localStorage.removeItem("user")
+        window.location = "login.html"
+    }
+</script>
 </html>
