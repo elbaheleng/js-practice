@@ -12,8 +12,8 @@
     <div class="container-fluid">
         <div class="row">
             <h1 class="text-center text-success mt-3">User Details</h1>
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-sm-12">
                 <table class="table">
                     <thead>
                         <tr>
@@ -23,24 +23,13 @@
                             <th class="bg-success-subtle">completed</th>
                           </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <td>  </td>
-                            <td> </td>
-                            <td></td>
-                            <td></td>
-                          </tr>
+                    <tbody id = 'result'>
+                      
                     </tbody>
                     
                   </table>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-2"></div>
         </div>
 
     </div>
@@ -62,7 +51,18 @@
             
             if (http.status >= 200 && http.status <300){
                 console.log('response');
-                console.log(http.responseText);
+                console.log(http.responseText);// displays data in JSON format
+                let alltodos = JSON.parse(http.responseText)// converts data from JSON format to objects
+                console.log(alltodos);// displays data in object format
+
+                alltodos.forEach(item => {
+                    result.innerHTML += `<tr>
+                            <td>${item.userId}</td>
+                            <td>${item.id}</td>
+                            <td>${item.title}</td>
+                            <td>${item.completed}</td>
+                          </tr>`
+                });
             }
             else{
                 console.log('no data, response range not in 2xx');
@@ -72,6 +72,5 @@
             console.log('no data, pls wait till readyState reaches 4');
         }
     }
-
 </script>
 </html>
